@@ -1,6 +1,7 @@
 package test;
 
 import map.HexagonMap;
+import map.Point;
 import processing.core.PApplet;
 
 public class HexagonMapTest extends PApplet {
@@ -10,8 +11,9 @@ public class HexagonMapTest extends PApplet {
 	public void setup()
 	{
 		size(500,500);
-		strokeWeight(5);
+		strokeWeight(2);
 		map = new HexagonMap(20,20);
+		map.setupHex();
 	}
 	
 	public void draw()
@@ -23,6 +25,23 @@ public class HexagonMapTest extends PApplet {
 			for (int c = 0; c < map.points[0].length; c++)
 			{
 				point((float)map.points[r][c].x, (float)map.points[r][c].y);
+			}
+		}
+		for (int r = 0; r < map.hexs.length; r++)
+		{
+			for (int c = 0; c < map.hexs[0].length; c++)
+			{
+				if (map.hexs[r][c] == null) continue;
+				//try {
+				fill(r*25F, 0, c*25F);
+				beginShape();
+				for (int i = 0; i < map.hexs[r][c].points.size(); i++)
+				{
+					Point p = map.hexs[r][c].points.get(i);
+					vertex((float)p.x, (float)p.y);
+				}
+				endShape();
+				//} catch (Exception e) {}
 			}
 		}
 	}
