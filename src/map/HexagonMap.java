@@ -3,6 +3,7 @@ package map;
 public class HexagonMap {
 
 	public Point[][] points;
+	public Polygon[][] hexs;
 	public int row, col;
 	public float len = 20;
 	
@@ -28,6 +29,18 @@ public class HexagonMap {
 						y += len/2;
 				}
 				points[r][c] = new Point(x,y,0);
+			}
+		}
+	}
+	
+	public void setupHex()
+	{
+		hexs = new Polygon[row][col]; //some extra spaces just in case
+		for (int r = 0; r < row - 2; r += 2)
+		{
+			for (int c = 0; c < col - 2; c += 2)
+			{
+				hexs[r][c] = new Polygon(points[r][c],points[r+1][c],points[r+2][c],points[r+2][c+1],points[r+1][c+1],points[r][c+1]);
 			}
 		}
 	}
