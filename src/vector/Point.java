@@ -1,4 +1,4 @@
-package map;
+package vector;
 
 //A 3D point in the form (x,y,z)
 

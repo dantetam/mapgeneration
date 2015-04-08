@@ -1,5 +1,7 @@
 package map;
 
+import vector.Point;
+
 public class HexagonMap {
 
 	public Point[][] points;

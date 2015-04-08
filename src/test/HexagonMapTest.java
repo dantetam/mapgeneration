@@ -1,7 +1,7 @@
 package test;
 
 import processing.core.PApplet;
-
+import vector.Point;
 import map.*;
 
 public class HexagonMapTest extends PApplet {

@@ -1,4 +1,4 @@
-package map;
+package vector;
 
 //A line in the form of a parametric equation (point and vector parallel to line).
 

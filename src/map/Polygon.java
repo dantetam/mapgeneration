@@ -2,6 +2,8 @@ package map;
 
 import java.util.ArrayList;
 
+import vector.Point;
+
 public class Polygon {
 
 	public ArrayList<Point> points;

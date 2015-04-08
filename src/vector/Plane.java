@@ -1,4 +1,4 @@
-package map;
+package vector;
 
 //A plane in the form Ax + By + Cz = D
 

@@ -2,6 +2,8 @@ package map;
 
 import java.util.ArrayList;
 
+import vector.Point;
+
 public class NoiseHexagonMap extends HexagonMap {
 
 	public NoiseHexagonMap(String type, int rows, int cols) {
