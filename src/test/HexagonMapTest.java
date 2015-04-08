@@ -1,8 +1,8 @@
 package test;
 
-import map.HexagonMap;
-import map.Point;
 import processing.core.PApplet;
+
+import map.*;
 
 public class HexagonMapTest extends PApplet {
 
@@ -10,10 +10,10 @@ public class HexagonMapTest extends PApplet {
 	
 	public void setup()
 	{
-		size(500,500);
+		size(800,800);
 		strokeWeight(2);
-		map = new HexagonMap(20,20);
-		map.setupHex();
+		//map = new NoiseHexagonMap("hex",25,25);
+		map = new HexagonMap("square",25,25);
 	}
 	
 	public void draw()
@@ -33,7 +33,7 @@ public class HexagonMapTest extends PApplet {
 			{
 				if (map.hexs[r][c] == null) continue;
 				//try {
-				fill(r*25F, 0, c*25F);
+				fill(r*10F, 0, c*10F);
 				beginShape();
 				for (int i = 0; i < map.hexs[r][c].points.size(); i++)
 				{
